@@ -27,7 +27,13 @@ func queryHistory(profile, url, title string, limit int) ([]history.Entry, error
 	}
 	defer his.Close()
 
-	return his.Query(url, title, limit)
+	entries, err := his.Query(url, title, limit)
+	if err != nil {
+		return nil, err
+	}
+
+	uniqEntries := history.Uniq(entries)
+	return uniqEntries, nil
 }
 
 type historyFile struct {
