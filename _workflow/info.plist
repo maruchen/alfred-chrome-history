@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.github.pasela.alfred-chrome-history</string>
+	<string>com.github.maruchen.alfred-chrome-history</string>
 	<key>category</key>
 	<string>Internet</string>
 	<key>connections</key>
@@ -31,9 +31,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>8BFE858A-7C79-457F-92C7-36059CD5813E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>095A2E45-4212-4924-9886-EEB44BED9CA8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>96E9ABD0-1BC6-4970-A6BF-3A382210E13E</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
-	<string>pasela</string>
+	<string>maruchen</string>
 	<key>description</key>
 	<string>Search Chrome history</string>
 	<key>disabled</key>
@@ -45,10 +68,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>095A2E45-4212-4924-9886-EEB44BED9CA8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -87,26 +131,56 @@
 			<key>uid</key>
 			<string>50B0CD10-4D52-4898-9C05-DD3A34A829C3</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>藏</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
 				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
+				<key>script</key>
+				<string>./alfred-chrome-history "$@"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>test.sh</string>
+				<key>subtext</key>
+				<string>Open Chrome History</string>
+				<key>title</key>
+				<string>Chrome History</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>095A2E45-4212-4924-9886-EEB44BED9CA8</string>
+			<string>8BFE858A-7C79-457F-92C7-36059CD5813E</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -115,6 +189,8 @@
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -123,7 +199,7 @@
 			<key>uid</key>
 			<string>96E9ABD0-1BC6-4970-A6BF-3A382210E13E</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -143,9 +219,9 @@ You can specify the profile and result limits.
 		<key>095A2E45-4212-4924-9886-EEB44BED9CA8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>450</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>45</integer>
 		</dict>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
 		<dict>
@@ -156,17 +232,28 @@ You can specify the profile and result limits.
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
+		<key>8BFE858A-7C79-457F-92C7-36059CD5813E</key>
+		<dict>
+			<key>note</key>
+			<string>Alfred 3 now supports JSON as the Script Filter output. This is the recommended output.</string>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>285</integer>
+		</dict>
 		<key>96E9ABD0-1BC6-4970-A6BF-3A382210E13E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>480</integer>
 			<key>ypos</key>
-			<integer>210</integer>
+			<integer>310</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
-	<string>https://github.com/pasela/alfred-chrome-history</string>
+	<string>https://github.com/maruchen/alfred-chrome-history</string>
 </dict>
 </plist>

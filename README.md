@@ -52,5 +52,10 @@ history文件是 sqlite3 数据库，包含 id、url、title、visit_count、typ
 
 
 ## TODO
-[] feishu/docs 和 sheet 对?后面的去重
+[x] feishu/docs 和 sheet 对?后面的去重
+    eg. https://bytedance.feishu.cn/sheets/shtcnvOYmdGtPWg5oAiC26nqzxe
 [] 保存favicon
+[] 在title处把count, 时间也打印出来
+[] 不止搜history，也搜bookmarks
+
+

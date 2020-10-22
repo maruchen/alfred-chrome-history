@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"net/url"
 	"path/filepath"
-	"sort"
 	"strings"
 	"time"
 
@@ -168,33 +167,4 @@ func convertChromeTime(msec int64) time.Time {
 	t := time.Unix(sec, nsec)
 	t = t.AddDate(-369, 0, 0) // 369 = 1970 - 1601
 	return t
-}
-
-func Uniq(in []Entry) []Entry {
-	if len(in) == 0 {
-		return []Entry{}
-	}
-
-	entryByKey := make(map[string]Entry, len(in))
-
-	// URL去掉#hash后去重
-	// TODO: feishu/docs 和 sheet 对?后面的去重
-	for i := len(in) - 1; i >= 0; i-- { // 反向遍历，后面的权重低，所以会被前面的覆盖
-		key := in[i].URL
-		if idx := strings.LastIndex(key, "#"); idx != -1 {
-			key = key[0:idx]
-		}
-		entryByKey[key] = in[i]
-	}
-
-	// map => slice ordered by xxx DESC
-	out := make([]Entry, 0, len(entryByKey))
-	for _, entry := range entryByKey {
-		out = append(out, entry)
-	}
-	sort.Sort(ByDesc(out))
-
-	// fmt.Printf("in %v => out %v\n", in, out)
-	// fmt.Printf("in %d => out %d\n", len(in), len(out))
-	return out
 }

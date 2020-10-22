@@ -1,4 +1,3 @@
-alfred-chrome-history
-chrome-history
-*.alfredworkflow
+test.log
+alfred-chrome-history.alfredworkflow
 build/
