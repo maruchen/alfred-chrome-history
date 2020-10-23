@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -27,7 +28,9 @@ func runWithAlfred(wf *aw.Workflow) {
 	}
 
 	for _, entry := range entries {
-		item := wf.NewItem(entry.Title)
+		title := fmt.Sprintf("%s [%s]", entry.Title, entry.LastVisitTime.Format("1月2日 15点"))
+		// item := wf.NewItem(entry.Title)
+		item := wf.NewItem(title)
 		item.UID(strconv.Itoa(entry.ID))
 		item.Subtitle(entry.URL)
 		item.Arg(entry.URL)

@@ -32,7 +32,7 @@ func queryHistory(profile, url, title string, limit int) ([]history.Entry, error
 		return nil, err
 	}
 
-	uniqEntries := history.Uniq(entries)
+	uniqEntries := history.UniqAndSort(entries)
 	return uniqEntries, nil
 }
 

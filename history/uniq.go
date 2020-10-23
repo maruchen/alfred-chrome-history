@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-// Uniq 对history去重
-func Uniq(in []Entry) []Entry {
+// UniqAndSort 对history去重并排序
+func UniqAndSort(in []Entry) []Entry {
 	if len(in) == 0 {
 		return []Entry{}
 	}
